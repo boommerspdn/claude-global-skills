@@ -8,17 +8,35 @@ Global Claude Code slash commands, available across all projects.
 
 ### 1. Clone the repo
 
+**Mac / Linux**
 ```bash
 git clone https://github.com/boommerspdn/claude-global-skills ~/Documents/GitHub/claude-global-skills
 ```
 
+**Windows (PowerShell)**
+```powershell
+git clone https://github.com/boommerspdn/claude-global-skills "$env:USERPROFILE\Documents\GitHub\claude-global-skills"
+```
+
+---
+
 ### 2. Symlink commands into Claude Code
 
+> Claude Code automatically picks up any `.md` files in `~/.claude/commands/` as slash commands.
+
+**Mac / Linux**
 ```bash
 ln -s ~/Documents/GitHub/claude-global-skills/commands ~/.claude/commands
 ```
 
-> Claude Code automatically picks up any `.md` files in `~/.claude/commands/` as slash commands.
+**Windows (PowerShell — run as Administrator)**
+```powershell
+New-Item -ItemType Junction `
+  -Path "$env:USERPROFILE\.claude\commands" `
+  -Target "$env:USERPROFILE\Documents\GitHub\claude-global-skills\commands"
+```
+
+---
 
 ### 3. Verify
 
